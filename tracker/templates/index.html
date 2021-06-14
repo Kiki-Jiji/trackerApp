@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+  
+<h1>Tracker</h1>
+<p>This is a weight tracking web app</p>
+
+<div class="row">
+    <div class="col-md-10 col-lg-offset-1">
+      <table class="table table-striped" id="owned_stock_table">
+          <thead>
+              <h2>Recent weights</h2>
+              <tr>
+                  <th>Weight</th>
+                  <th>Date</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+              {% for row in table %}
+              <td>{{ row.weight }}</td>
+              <td>{{ row.date }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+    </div>
+</div>
+
+
+
+{% endblock %}
