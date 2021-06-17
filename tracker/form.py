@@ -86,3 +86,9 @@ def input():
             flash('Submitted')
 
     return render_template('form.html', form=form)
+
+@bp.route('/chart')
+def chart():
+    table = get_weights()
+    
+    return render_template('chart.html', table=table)

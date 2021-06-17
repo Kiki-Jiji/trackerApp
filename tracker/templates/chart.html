@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<div class="container">
+    <h1>Chart</h1>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    
+    // const labels = [
+    //   'January',
+    //   'February',
+    //   'March',
+    //   'April',
+    //   'May',
+    //   'June',
+    // ];
+
+    const labels = [ {% for item in table.date %}
+        "{{item}}",
+        {% endfor %}];
+
+    const weight_data = [ {% for item in table.weight %}
+        {{item}},
+        {% endfor %}] ;
+
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Weight',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: weight_data,
+      }]
+    };
+    
+    const config = {
+      type: 'line',
+      data,
+      options: {}
+    };
+    
+    var myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    
+    </script>
+
+</div>
+
+{% endblock %}
