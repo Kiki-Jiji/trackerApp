@@ -21,9 +21,12 @@ _mailinglist
 .idea/
 docs/_build/
 .vscode
+.metals
 
 # Coverage reports
 htmlcov/
 .coverage
 .coverage.*
 *,cover
+
+test.html

@@ -6,9 +6,7 @@ from wtforms.validators import DataRequired
 from datetime import datetime
 today = datetime.today()
 
-
 from .db import get_last_weight
-
 
 class weight(FlaskForm):
 
@@ -17,3 +15,4 @@ class weight(FlaskForm):
     summit = SubmitField('Submit')
 
     
+

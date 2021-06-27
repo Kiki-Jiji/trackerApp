@@ -13,15 +13,6 @@
     
     <script>
     
-    // const labels = [
-    //   'January',
-    //   'February',
-    //   'March',
-    //   'April',
-    //   'May',
-    //   'June',
-    // ];
-
     const labels = [ {% for item in table.date %}
         "{{item}}",
         {% endfor %}];
